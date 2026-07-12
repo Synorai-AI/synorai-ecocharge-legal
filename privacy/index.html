@@ -54,12 +54,13 @@
   <div class="wrap">
     <div class="card">
       <h1>Synorai EcoCharge Privacy Policy</h1>
-      <p class="muted">Last updated: April 20, 2026</p>
+      <p class="muted">Last updated: July 11, 2026</p>
 
       <p>
-        Synorai EcoCharge helps Shopify merchants present environmental handling fees more clearly
-        for eligible electronics in supported provinces. In the current version, support is limited
-        to Alberta, British Columbia, and Saskatchewan.
+        Synorai EcoCharge automatically applies Canadian environmental handling fees (EHF) for
+        eligible electronics — in the online cart, at checkout, and on POS — and provides
+        remittance reporting for all nine provinces with a regulated program (AB, BC, MB, NB,
+        NL, NS, PE, QC, SK).
       </p>
 
       <h2>Information we collect</h2>
@@ -70,8 +71,26 @@
         <li>Product and variant information, including product tags used for fee category logic</li>
         <li>Store configuration data, including the merchant-selected province and app setup settings</li>
         <li>Limited cart and merchandise data required to calculate or display supported environmental handling fees</li>
+        <li>Order information used for remittance reporting, described in detail below</li>
         <li>Technical logs and webhook metadata needed for security, debugging, and support</li>
       </ul>
+
+      <h2>Order data and remittance reporting</h2>
+      <p>
+        To provide per-province EHF remittance reports, the app processes each paid order&rsquo;s
+        shipping destination. We read the shipping address only to determine the destination
+        <strong>province and country code</strong>.
+      </p>
+      <p>What we store per order:</p>
+      <ul>
+        <li>Destination province and country code (for example, &ldquo;BC, CA&rdquo;)</li>
+        <li>The order number and date</li>
+        <li>The environmental fee amounts charged and the amounts owed under the destination province&rsquo;s schedule</li>
+      </ul>
+      <p>
+        <strong>We do not store customer names, street addresses, email addresses, phone numbers,
+        or any other personally identifying customer information.</strong>
+      </p>
 
       <h2>Information provided directly by merchants</h2>
       <p>
@@ -79,42 +98,51 @@
         settings, selecting a supported province, or contacting us for support.
       </p>
 
-      <h2>Information from customers</h2>
-      <p>
-        Synorai EcoCharge is not designed to collect customer personal data directly for advertising
-        or marketing purposes. The app may process limited cart or product information made available
-        through Shopify only when needed to provide the app's fee calculation and display functionality.
-      </p>
-
       <h2>How we use information</h2>
       <p>We use collected information to:</p>
       <ul>
         <li>Authenticate the app and maintain secure app sessions</li>
         <li>Save merchant settings and supported province configuration</li>
-        <li>Calculate, display, or support environmental handling fee functionality</li>
+        <li>Calculate, apply, and report supported environmental handling fees</li>
+        <li>Produce per-province EHF remittance reports for the merchant</li>
         <li>Determine eligibility for Standard or Pro app behavior</li>
         <li>Maintain app security, troubleshoot issues, and provide merchant support</li>
         <li>Comply with legal obligations and enforce our terms</li>
       </ul>
+      <p>We use personal data only for the purposes described here, and never for advertising,
+        marketing, profiling, or automated decision-making about individuals.</p>
 
       <h2>Data sharing</h2>
       <p>
         We do not sell merchant or customer data. We do not use merchant or customer data for
-        advertising. We may share limited information with infrastructure and service providers only
-        as needed to operate, secure, and support the app.
+        advertising. Our only service provider is Render (cloud hosting), which hosts the
+        application and its database.
       </p>
 
-      <h2>Data retention</h2>
-      <p>
-        We retain information only for as long as reasonably necessary to provide the app, maintain
-        security and support, comply with legal obligations, resolve disputes, and enforce our agreements.
-      </p>
+      <h2>Data retention and deletion</h2>
+      <ul>
+        <li>Remittance records are kept only while the app is installed on a store.</li>
+        <li>All of a store&rsquo;s records are deleted automatically when the app is uninstalled,
+            and again upon receipt of Shopify&rsquo;s <code>shop/redact</code> webhook.</li>
+        <li>Customer-level redaction requests (<code>customers/redact</code>,
+            <code>customers/data_request</code>) are honored automatically; because the app stores
+            no customer-level personal data, there is nothing to return or erase for an individual
+            customer.</li>
+      </ul>
+
+      <h2>Security</h2>
+      <ul>
+        <li>All data is encrypted in transit (TLS/HTTPS) and at rest (managed, encrypted database and backups).</li>
+        <li>Access is limited to the app&rsquo;s owner-operator via credentialed, logged accounts.</li>
+        <li>A security incident response policy is maintained; merchants are notified promptly of any
+            incident affecting their data.</li>
+      </ul>
 
       <h2>Merchant responsibility</h2>
       <p>
-        Synorai EcoCharge helps merchants present supported environmental handling fees more clearly.
-        Merchants remain responsible for confirming their own legal, regulatory, compliance, reporting,
-        and remittance obligations.
+        Synorai EcoCharge automates fee application and reporting to assist with compliance.
+        Merchants remain responsible for confirming their own legal, regulatory, compliance,
+        reporting, and remittance obligations.
       </p>
 
       <h2>Contact</h2>
